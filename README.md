@@ -32,7 +32,6 @@ Hint button - this button will help you find a match if you're stuck
 Make your own - this button will allow you to upload your own pictures/names to create this game for your own family. 
 
 Psuedocode
-Psuedocode:
 Define required constants. 
     Define an object array for the cards
 Define required variables used to track the state of the game. 

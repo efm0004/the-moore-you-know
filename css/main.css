@@ -25,7 +25,7 @@ h1 {
     height: 100%;
 }
 
-.face-card, .name-card {
+.card {
     width: 50px;
     height: 50px;
     position: relative;
@@ -34,9 +34,18 @@ h1 {
 
 .front, .back {
     position: absolute;
+    backface-visibility: hidden;
 }
+
+/* .front {
+    transform: rotateY("180deg");
+} */
 
 img {
     height: 50px;
     width: 50px; 
 }
+
+/* div.flip {
+    transform: rotateY('180deg');
+} */
