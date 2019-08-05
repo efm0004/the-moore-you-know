@@ -30,3 +30,19 @@ High score - will add high score for the instance that has the highest amount of
 Stretch goals
 Hint button - this button will help you find a match if you're stuck
 Make your own - this button will allow you to upload your own pictures/names to create this game for your own family. 
+
+Psuedocode
+Psuedocode:
+Define required constants. 
+    Define an object array for the cards
+Define required variables used to track the state of the game. 
+Store elements that will be accessed in code more than once in variables to make the code more concise, readable, and performant. 
+Upon loading the page should:
+    Render the board.
+    Start the timer.
+Handle player clicking a card. 
+Handle player finding a match (or failing to find a match). 
+Handle the player completing a level. 
+Handle the timer. 
+Handle the high score. 
+Handle the make your own button. 
