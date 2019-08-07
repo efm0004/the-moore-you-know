@@ -142,36 +142,36 @@ var matches = [
     [20, 21],
     [22, 23],
 ]
-
-// var winning = 12; 
+//timer constants
+var minutes = 0;
+var seconds = 0;
 
 /*----- app's state (variables) -----*/ 
 let cardsInPlay = [];
 let random = [];
+let playerArr = [];
 let win;
+let mFound = false;
 
 /*----- cached element references -----*/ 
 let image = document.querySelectorAll("img");
 let board = document.querySelector('.board'); 
+let msgEl = document.getElementById('msg');
+var elMin = document.getElementById('timer');
 
 /*----- event listeners -----*/ 
 board.addEventListener('click', handleClick);
 
 
 /*----- functions -----*/
-//init - shuffle, render, handleClick (matchFind, flipCard)
 init();
 
 function init() {
     cardsInPlay = [];
-    winning = 0; 
+    win = 0; 
     shuffle ();
     render ();
 }
-//shuffle - make a list of people and shuffle; 
-//and render back-face cards; 
-//assign the names to the imgs; 
-//evt listener that does an onClick
 
 function render() {
     //create an image tag; give tag scr of back; give it class attribute for first
@@ -208,64 +208,68 @@ function handleClick(evt){
     console.log(evt.target.id);
     evtTarget.setAttribute('src', `${deck[evt.target.id].cardImage}`);
     cardsInPlay.push({id:evt.target.id, src: evt.target.src});
+    playerArr.push(parseInt(evt.target.id));
     getMatch(); //need to find a way to delay this - the second cardsInPlay value doesn't change image
-    // if (tClass.includes("card")) {
-    //     if (tClass.includes("back")) {
-    //         let faceImage = getFaceImage(tClass);
-    //         let nameImage = getNameImage(tClass);
-    //         console.log(faceImage);
-    //         console.log(nameImage);
-    //     } else console.log("face up");
-    // }
+}
+
+function checkMatch(a, b) {
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] !== b[i])
+            return false
+    }
+    return true;
 }
 
 function getMatch() {
-    if (cardsInPlay.length === 2) {
-        if (cardsInPlay[0] === cardsInPlay[1]) {
-            alert('You found a match!');
-            cardsInPlay.length = 0;
-            winning += 1; 
-        } else {
-            alert('Sorry, try again');
+    if (playerArr.length === 2) {
+        playerArr.sort((a, b) => a - b);
+        for (let i = 0; i < matches.length; i++ ) {
+            if (checkMatch (playerArr, matches[i])){
+                msgEl.textContent = 'You found a match!';
+                playerArr.length = 0;    
+                cardsInPlay.length = 0;
+                console.log(cardsInPlay);
+                win += 1; 
+                mFound = true;
+        } 
+        }
+            if(!mFound) {
+            msgEl.textContent = 'Sorry, try again!';
             document.getElementById(cardsInPlay[0].id)
                 .setAttribute('src', `${cardBack}`);
             document.getElementById(cardsInPlay[1].id)
                 .setAttribute('src', `${cardBack}`);
+            playerArr.length = 0;
             cardsInPlay.length = 0;
-            console.log(cardsInPlay);
-            // cardsInPlay.forEach(function(idx) {
-            //     image.setAttribute('src', 'TMYK-Photos/TMYK-back.png');
-            //     console.log(image)
-            //     cardsInPlay.length = 0;
-            // }
-            
-            // cardsInPlay.forEach(function(el, idx).setAttribute('src', `${cardBack}`);
-        }
+            } 
+        mFound = false; 
     }
+    getWinner();
 }
 
-// function getFaceImage(tClass){ 
-//     //get class in card that's clicked and then change image to correct URL
-//     tClass = tClass.replace("back ", "")
-//     let personImage;
-//     deck.forEach(person => {
-//         if (person.name === tClass && person.cardType === "face")
-//         personImage = person.cardImage;
-//     }); 
-//     return personImage;
-// } 
+function getWinner(){
+    if (win === 78) 
+        msgEl.textContent = "You won!"
+}
 
-// function getNameImage(tClass){
-//     tClass = tClass.replace("back ", "")
-//     let nameImage;
-//     deck.forEach(person => {
-//         if (person.name === tClass && person.cardType === "name")
-//         nameImage = person.cardImage;
-//     }); 
-//     return nameImage;
-// }
+//timer functions
 
-// function flipCard() {
-//     var cardId = this.getFaceImage(tClass);
-//     this.setAttribute('src', cardId);
-// }
+function incrementSeconds() {
+    seconds += 1;
+    incrementMinutes();
+}
+
+function incrementMinutes() {
+  if (seconds === 60) {
+    minutes +=1; 
+    seconds = 0;
+  } 
+  if (seconds < 10) {
+    elMin.innerText = minutes + ":0" + seconds;
+  } else {
+    elMin.innerText = minutes + ":" + seconds;
+  }
+}
+
+var cancel = setInterval(incrementSeconds, 1000);
+
