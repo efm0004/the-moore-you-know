@@ -123,10 +123,6 @@ let deck = [
 
 var cardBack = "TMYK-Photos/TMYK-back.png";
 
-    // var cardElements = {
-
-    // }
-
 
 var matches = [
     [0, 1],
@@ -146,18 +142,25 @@ var matches = [
 var minutes = 0;
 var seconds = 0;
 
+//score constants
+var x = 0;
+
 /*----- app's state (variables) -----*/ 
 let cardsInPlay = [];
 let random = [];
 let playerArr = [];
 let win;
 let mFound = false;
+// let level = 1;
+let highest = 0;
 
 /*----- cached element references -----*/ 
 let image = document.querySelectorAll("img");
 let board = document.querySelector('.board'); 
 let msgEl = document.getElementById('msg');
 var elMin = document.getElementById('timer');
+let elX = document.getElementById('current');
+let elHighest = document.getElementById('highscore');
 
 /*----- event listeners -----*/ 
 board.addEventListener('click', handleClick);
@@ -171,11 +174,18 @@ function init() {
     win = 0; 
     shuffle ();
     render ();
+    msgEl.innerText = "Level One"
 }
 
+// function initLevelTwo() {
+//     cardsInPlay = [],
+//     win = 0
+//     shuffle ();
+//     render ();
+//     msgEl.innerText = "Level Two";
+// }
+
 function render() {
-    //create an image tag; give tag scr of back; give it class attribute for first
-    //argument, and then class attribute as second argument
     random.forEach(function(el, idx) {
         let img = document.createElement('img');
         img.setAttribute('class', `back card face`);
@@ -185,6 +195,7 @@ function render() {
     })
 }
 
+//do some testing on this function
 function shuffle () {
     var max = 24; 
     for (var i = 0; i<max; i++){
@@ -192,24 +203,30 @@ function shuffle () {
         if (random.indexOf(temp) === -1){
             random.push(temp);
         } else (i--);
-    } console.log(random);
-    // const setRandomImages;
+    } 
+    // if (level = 1) {
     let images = document.querySelectorAll('img.back')
     images.forEach((imageEl, index) => {
-        // console.log(deck[random[index]])
-        // imageEl.setAttribute('src', deck[random[index]].cardImage)
         imageEl.setAttribute('class', `back ${deck[random[index]].name}`)
-        // console.log(imageEl);
+    // })
+// } else if (level = 2) {
+//     let images = document.querySelectorAll('img.back')
+//     images.forEach((imageEl, index) => {
+//         imageEl.setAttribute('class', `back ${deckTwo[random[index]].name}`)
+//     })
     })
 }
 
 function handleClick(evt){
     var evtTarget = evt.target;
-    console.log(evt.target.id);
-    evtTarget.setAttribute('src', `${deck[evt.target.id].cardImage}`);
+    // if (level === 1) {
+        evtTarget.setAttribute('src', `${deck[evt.target.id].cardImage}`);
+    // } else if (level === 2) {
+    //     evtTarget.setAttribut('src', `${deckTwo[evt.target.id].cardImage}`);
+    // }
     cardsInPlay.push({id:evt.target.id, src: evt.target.src});
     playerArr.push(parseInt(evt.target.id));
-    getMatch(); //need to find a way to delay this - the second cardsInPlay value doesn't change image
+    setTimeout(getMatch, 1000);
 }
 
 function checkMatch(a, b) {
@@ -228,28 +245,35 @@ function getMatch() {
                 msgEl.textContent = 'You found a match!';
                 playerArr.length = 0;    
                 cardsInPlay.length = 0;
-                console.log(cardsInPlay);
-                win += 1; 
                 mFound = true;
         } 
         }
             if(!mFound) {
-            msgEl.textContent = 'Sorry, try again!';
-            document.getElementById(cardsInPlay[0].id)
-                .setAttribute('src', `${cardBack}`);
-            document.getElementById(cardsInPlay[1].id)
-                .setAttribute('src', `${cardBack}`);
-            playerArr.length = 0;
-            cardsInPlay.length = 0;
+                msgEl.textContent = 'Sorry, try again!';
+                document.getElementById(cardsInPlay[0].id)
+                    .setAttribute('src', `${cardBack}`);
+                document.getElementById(cardsInPlay[1].id)
+                    .setAttribute('src', `${cardBack}`);
+                playerArr.length = 0;
+                cardsInPlay.length = 0;
             } 
+            if (mFound) {
+                win += 1;
+                currentScore ();
+            }
         mFound = false; 
     }
     getWinner();
 }
 
 function getWinner(){
-    if (win === 78) 
+    if (win === 12) {
         msgEl.textContent = "You won!"
+        clearInterval(cancel);
+        endScore();
+        highScore();
+        // level +=1;
+    }
 }
 
 //timer functions
@@ -273,3 +297,36 @@ function incrementMinutes() {
 
 var cancel = setInterval(incrementSeconds, 1000);
 
+//score functions
+
+function endScore(){
+    if (minutes < 1) {
+        x += 2000;
+    } else if (minutes < 2) {
+        x += 1500;
+    } else if (minutes < 3) {
+        x += 1000;
+    } else if (minutes < 4) {
+        x += 750;
+    } else if (minutes < 5) {
+        x += 500;
+    } else if (minutes < 10) {
+        x += 100;
+    } else {
+        x += 0;
+    } 
+    elX.innerText = x;
+}
+
+function currentScore() {
+    x = win*10;
+    elX.innerText = x
+}
+
+function highScore() {
+    if (highest < x) {
+        elHighest.innerText = x;
+    } else {
+        elHighest.innerText = highest;
+    }
+}
