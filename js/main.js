@@ -152,29 +152,41 @@ let playerArr = [];
 let win;
 let mFound = false;
 // let level = 1;
-let highest = 0;
+let highest = [10];
+let cancel;
 
 /*----- cached element references -----*/ 
-let image = document.querySelectorAll("img");
+let image = document.querySelectorAll('img');
 let board = document.querySelector('.board'); 
 let msgEl = document.getElementById('msg');
 var elMin = document.getElementById('timer');
 let elX = document.getElementById('current');
 let elHighest = document.getElementById('highscore');
+let reset = document.getElementById('reset');
+
 
 /*----- event listeners -----*/ 
 board.addEventListener('click', handleClick);
-
+reset.addEventListener('click', init);
 
 /*----- functions -----*/
 init();
 
 function init() {
+    clearInterval(cancel);
+    cancel = setInterval(incrementSeconds, 1000);
     cardsInPlay = [];
-    win = 0; 
+    playerArr = [];
+    random = [];
+    mFound = false;
+    win = 0;
+    minutes = 0;
+    seconds = 0;
+    elX.innerText = 0;
+    x = 0; 
     shuffle ();
     render ();
-    msgEl.innerText = "Level One"
+    msgEl.innerText = "Level One";
 }
 
 // function initLevelTwo() {
@@ -186,6 +198,7 @@ function init() {
 // }
 
 function render() {
+    board.innerHTML = "";
     random.forEach(function(el, idx) {
         let img = document.createElement('img');
         img.setAttribute('class', `back card face`);
@@ -226,7 +239,7 @@ function handleClick(evt){
     // }
     cardsInPlay.push({id:evt.target.id, src: evt.target.src});
     playerArr.push(parseInt(evt.target.id));
-    setTimeout(getMatch, 1000);
+    setTimeout(getMatch, 500);
 }
 
 function checkMatch(a, b) {
@@ -275,7 +288,7 @@ function getWinner(){
         // level +=1;
     }
 }
-
+//winner doesn't let restart button work;
 //timer functions
 
 function incrementSeconds() {
@@ -294,8 +307,6 @@ function incrementMinutes() {
     elMin.innerText = minutes + ":" + seconds;
   }
 }
-
-var cancel = setInterval(incrementSeconds, 1000);
 
 //score functions
 
@@ -325,8 +336,8 @@ function currentScore() {
 
 function highScore() {
     if (highest < x) {
-        elHighest.innerText = x;
-    } else {
-        elHighest.innerText = highest;
+        highest.push(x);
+        y = Math.max(...highest);
+        elHighest.innerText = y;
     }
 }

@@ -49,4 +49,10 @@ div {
     margin: 5px; 
 }
 
+button {
+    color: #FEFFFE;
+    background: #0B3142;
+    border: 3px solid #FEFFFE;
+}
+
 
