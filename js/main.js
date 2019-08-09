@@ -2,124 +2,198 @@
 let deck = [
     {
         name: "card harry",
-        cardImage: "TMYK-Photos/TMYK-Harry.jpg",
-        cardType: "face"
+        cardImage: "TMYK-Photos/TMYK-Harry.jpg"
     },
     {
         name: "card harry",
-        cardImage: "TMYK-Photos/TMYK-nc-harry.png",
-        cardType: "name"
+        cardImage: "TMYK-Photos/TMYK-nc-harry.png"
     },
     {
         name: "card joanne",
-        cardImage: "TMYK-Photos/TMYK-Joanne.jpg",
-        cardType: "face"
+        cardImage: "TMYK-Photos/TMYK-Joanne.jpg"
     },
     {
         name: "card joanne",
-        cardImage: "TMYK-Photos/TMYK-nc-joanne.png",
-        cardType: "name"
+        cardImage: "TMYK-Photos/TMYK-nc-joanne.png"
     },
     {
         name: "card alison",
-        cardImage: "TMYK-Photos/TMYK-Alison.jpg",
-        cardType: "face"
+        cardImage: "TMYK-Photos/TMYK-Alison.jpg"
     },
     {
         name: "card alison",
-        cardImage: "TMYK-Photos/TMYK-nc-alison.png",
-        cardType: "name"
+        cardImage: "TMYK-Photos/TMYK-nc-alison.png"
     },
     {
         name: "card doug",
-        cardImage: "TMYK-Photos/TMYK-Doug.jpg",
-        cardType: "face"
+        cardImage: "TMYK-Photos/TMYK-Doug.jpg"
     },
     {
         name: "card doug",
-        cardImage: "TMYK-Photos/TMYK-nc-doug.png",
-        cardType: "name"
+        cardImage: "TMYK-Photos/TMYK-nc-doug.png"
     },
     {
         name: "card lauren",
-        cardImage: "TMYK-Photos/TMYK-Lauren.jpg",
-        cardType: "face"
+        cardImage: "TMYK-Photos/TMYK-Lauren.jpg"
     },
     {
         name: "card lauren",
-        cardImage: "TMYK-Photos/TMYK-nc-lauren.png",
-        cardType: "name"
+        cardImage: "TMYK-Photos/TMYK-nc-lauren.png"
     },
     {
         name: "card matt",
-        cardImage: "TMYK-Photos/TMYK-Matt.jpg",
-        cardType: "face"
+        cardImage: "TMYK-Photos/TMYK-Matt.jpg"
     },
     {
         name: "card matt",
-        cardImage: "TMYK-Photos/TMYK-nc-matt.png",
-        cardType: "name"
+        cardImage: "TMYK-Photos/TMYK-nc-matt.png"
     },
     {
         name: "card sarah",
-        cardImage: "TMYK-Photos/TMYK-Sarah.jpg",
-        cardType: "face"
+        cardImage: "TMYK-Photos/TMYK-Sarah.jpg"
     },
     {
         name: "card sarah",
-        cardImage: "TMYK-Photos/TMYK-nc-sarah.png",
-        cardType: "name"
+        cardImage: "TMYK-Photos/TMYK-nc-sarah.png"
     },
     {
         name: "card rob",
-        cardImage: "TMYK-Photos/TMYK-Rob.jpg",
-        cardType: "face"
+        cardImage: "TMYK-Photos/TMYK-Rob.jpg"
     },
     {
         name: "card rob",
-        cardImage: "TMYK-Photos/TMYK-nc-rob.png",
-        cardType: "name"
+        cardImage: "TMYK-Photos/TMYK-nc-rob.png"
     },
     {
         name: "card owen",
-        cardImage: "TMYK-Photos/TMYK-Owen.jpg",
-        cardType: "face"
+        cardImage: "TMYK-Photos/TMYK-Owen.jpg"
     },
     {
         name: "card owen",
-        cardImage: "TMYK-Photos/TMYK-nc-owen.png",
-        cardType: "name"
+        cardImage: "TMYK-Photos/TMYK-nc-owen.png"
     },
     {
         name: "card marycatherine",
-        cardImage: "TMYK-Photos/TMYK-Mary-Catherine.jpg",
-        cardType: "face"
+        cardImage: "TMYK-Photos/TMYK-Mary-Catherine.jpg"
     },
     {
         name: "card marycatherine",
-        cardImage: "TMYK-Photos/TMYK-nc-marycatherine.png",
-        cardType: "name"
+        cardImage: "TMYK-Photos/TMYK-nc-marycatherine.png"
     },
     {
         name: "card melissa",
-        cardImage: "TMYK-Photos/TMYK-Melissa.jpg",
-        cardType: "face"
+        cardImage: "TMYK-Photos/TMYK-Melissa.jpg"
     },
     {
         name: "card melissa",
-        cardImage: "TMYK-Photos/TMYK-nc-melissa.png",
-        cardType: "name"
+        cardImage: "TMYK-Photos/TMYK-nc-melissa.png"
     },
     {
         name: "card emily",
-        cardImage: "TMYK-Photos/TMYK-Emily.jpg",
-        cardType: "face"
+        cardImage: "TMYK-Photos/TMYK-Emily.jpg"
     },
     {
         name: "card emily",
-        cardImage: "TMYK-Photos/TMYK-nc-emily.png",
-        cardType: "name"
+        cardImage: "TMYK-Photos/TMYK-nc-emily.png"
     }]
+
+let deckTwo = [
+    {
+        name: "card charlotte",
+        cardImage: "TMYK-Photos/TMYK-Charlotte.jpg"
+    },
+    {
+        name: "card charlotte",
+        cardImage: "TMYK-Photos/TMYK-nc-charlotte.png"
+    },
+    {
+        name: "card douglascharles",
+        cardImage: "TMYK-Photos/TMYK-Douglas-Charles.jpg"
+        },
+        {
+            name: "card douglascharles",
+            cardImage: "TMYK-Photos/TMYK-nc-douglascharles.png"
+        },
+        {
+            name: "card adeline",
+            cardImage: "TMYK-Photos/TMYK-Adeline.jpg"
+        },
+        {
+            name: "card adeline",
+            cardImage: "TMYK-Photos/TMYK-nc-adeline.png"
+        },
+        {
+            name: "card leahcate",
+            cardImage: "TMYK-Photos/TMYK-Leah-Cate.jpg"
+        },
+        {
+            name: "card leahcate",
+            cardImage: "TMYK-Photos/TMYK-nc-leahcate.png"
+        },
+        {
+            name: "card audrey",
+            cardImage: "TMYK-Photos/TMYK-Audrey.jpg"
+        },
+        {
+            name: "card audrey",
+            cardImage: "TMYK-Photos/TMYK-nc-audrey.png"
+        },
+        {
+            name: "card flannery",
+            cardImage: "TMYK-Photos/TMYK-Flannery.jpg"
+        },
+        {
+            name: "card flannery",
+            cardImage: "TMYK-Photos/TMYK-nc-flannery.png"
+        },
+        {
+            name: "card molly",
+            cardImage: "TMYK-Photos/TMYK-Molly.jpg"
+        },
+        {
+            name: "card molly",
+            cardImage: "TMYK-Photos/TMYK-nc-molly.png"
+        },
+        {
+            name: "card matelda",
+            cardImage: "TMYK-Photos/TMYK-Matelda.jpg"
+        },
+        {
+            name: "card matelda",
+            cardImage: "TMYK-Photos/TMYK-nc-matelda.png"
+        },
+        {
+            name: "card bo",
+            cardImage: "TMYK-Photos/TMYK-Bo.jpg"
+        },
+        {
+            name: "card bo",
+            cardImage: "TMYK-Photos/TMYK-nc-bo.png"
+        },
+        {
+            name: "card brandon",
+            cardImage: "TMYK-Photos/TMYK-Brandon.jpg"
+        },
+        {
+            name: "card brandon",
+            cardImage: "TMYK-Photos/TMYK-nc-brandon.png"
+        },
+        {
+            name: "card ben",
+            cardImage: "TMYK-Photos/TMYK-Ben.jpg"
+        },
+        {
+            name: "card ben",
+            cardImage: "TMYK-Photos/TMYK-nc-ben.png"
+        },
+        {
+            name: "card brody",
+            cardImage: "TMYK-Photos/TMYK-Brody.jpg"
+        },
+        {
+            name: "card brody",
+            cardImage: "TMYK-Photos/TMYK-nc-brody.png"
+        }]
 
 var cardBack = "TMYK-Photos/TMYK-back.png";
 
@@ -151,9 +225,10 @@ let random = [];
 let playerArr = [];
 let win;
 let mFound = false;
-// let level = 1;
-let highest = [10];
+let level;
+let highest = [0];
 let cancel;
+
 
 /*----- cached element references -----*/ 
 let image = document.querySelectorAll('img');
@@ -172,6 +247,7 @@ reset.addEventListener('click', init);
 /*----- functions -----*/
 init();
 
+
 function init() {
     clearInterval(cancel);
     cancel = setInterval(incrementSeconds, 1000);
@@ -182,6 +258,7 @@ function init() {
     win = 0;
     minutes = 0;
     seconds = 0;
+    level = 1;
     elX.innerText = 0;
     x = 0; 
     shuffle ();
@@ -189,26 +266,25 @@ function init() {
     msgEl.innerText = "Level One";
 }
 
-// function initLevelTwo() {
-//     cardsInPlay = [],
-//     win = 0
-//     shuffle ();
-//     render ();
-//     msgEl.innerText = "Level Two";
-// }
+function initLevelTwo() {  
+    random = [];
+    mFound = false;
+    shuffle ();
+    render ();
+    msgEl.innerText = "Level Two";  
+}
 
 function render() {
     board.innerHTML = "";
     random.forEach(function(el, idx) {
-        let img = document.createElement('img');
-        img.setAttribute('class', `back card face`);
-        img.setAttribute('src', 'TMYK-Photos/TMYK-back.png');
-        img.setAttribute('id', `${el}`);
-        board.appendChild(img);
+    let img = document.createElement('img');
+    img.setAttribute('class', `back card face`);
+    img.setAttribute('src', 'TMYK-Photos/TMYK-back.png');
+    img.setAttribute('id', `${el}`);
+    board.appendChild(img);
     })
-}
+} 
 
-//do some testing on this function
 function shuffle () {
     var max = 24; 
     for (var i = 0; i<max; i++){
@@ -217,29 +293,31 @@ function shuffle () {
             random.push(temp);
         } else (i--);
     } 
-    // if (level = 1) {
+    if (level === 1) {
     let images = document.querySelectorAll('img.back')
     images.forEach((imageEl, index) => {
         imageEl.setAttribute('class', `back ${deck[random[index]].name}`)
-    // })
-// } else if (level = 2) {
-//     let images = document.querySelectorAll('img.back')
-//     images.forEach((imageEl, index) => {
-//         imageEl.setAttribute('class', `back ${deckTwo[random[index]].name}`)
-//     })
     })
+} else if (level === 2) {
+    let images = document.querySelectorAll('img.back')
+    images.forEach((imageEl, index) => {
+        imageEl.setAttribute('class', `back ${deckTwo[random[index]].name}`)
+    })
+    }
 }
 
 function handleClick(evt){
     var evtTarget = evt.target;
-    // if (level === 1) {
+    if (level === 1) {
         evtTarget.setAttribute('src', `${deck[evt.target.id].cardImage}`);
-    // } else if (level === 2) {
-    //     evtTarget.setAttribut('src', `${deckTwo[evt.target.id].cardImage}`);
-    // }
+    } 
+    if (level === 2) {
+        evtTarget.setAttribute('src', `${deckTwo[evt.target.id].cardImage}`);
+    }
     cardsInPlay.push({id:evt.target.id, src: evt.target.src});
     playerArr.push(parseInt(evt.target.id));
     setTimeout(getMatch, 500);
+
 }
 
 function checkMatch(a, b) {
@@ -255,14 +333,14 @@ function getMatch() {
         playerArr.sort((a, b) => a - b);
         for (let i = 0; i < matches.length; i++ ) {
             if (checkMatch (playerArr, matches[i])){
-                msgEl.textContent = 'You found a match!';
+                msgEl.textContent = "O - you're gonna - wen!";
                 playerArr.length = 0;    
                 cardsInPlay.length = 0;
                 mFound = true;
         } 
         }
             if(!mFound) {
-                msgEl.textContent = 'Sorry, try again!';
+                msgEl.textContent = "Things are getting Harry!";
                 document.getElementById(cardsInPlay[0].id)
                     .setAttribute('src', `${cardBack}`);
                 document.getElementById(cardsInPlay[1].id)
@@ -272,23 +350,37 @@ function getMatch() {
             } 
             if (mFound) {
                 win += 1;
-                currentScore ();
+                currentScore();
             }
         mFound = false; 
     }
-    getWinner();
+    addScore();
 }
 
-function getWinner(){
+function addScore(){
+    if (level === 1) {
+        getWinnerLevelOne();
+    } else {
+        getWinnerLevelTwo();
+    }
+}
+
+function getWinnerLevelOne(){
     if (win === 12) {
-        msgEl.textContent = "You won!"
+        level += 1;
+        initLevelTwo();
+    }
+}
+
+function getWinnerLevelTwo() {
+    if (win === 24) {
+        msgEl.textContent = "You know your Moore's!";
         clearInterval(cancel);
         endScore();
         highScore();
-        // level +=1;
     }
 }
-//winner doesn't let restart button work;
+
 //timer functions
 
 function incrementSeconds() {
@@ -335,7 +427,8 @@ function currentScore() {
 }
 
 function highScore() {
-    if (highest < x) {
+    let y = 0;
+    if (y < x) {
         highest.push(x);
         y = Math.max(...highest);
         elHighest.innerText = y;
