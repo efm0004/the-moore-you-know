@@ -43,7 +43,7 @@ Timer - will time your attempts and add to score based on how quickly you comple
 High score - will add high score for the instance that has the highest amount of points
 
 Next steps/Stretch goals
-x Reset button - try again, while holding onto your high score
+Reset button - try again, while holding onto your high score
 Levels - this will allow the player to move into more difficult areas of the family - neices and nephews, identifying the couples/families, answering questions. 
 Hint button - this button will help you find a match if you're stuck
 Make your own - this button will allow you to upload your own pictures and name cards to create this game for your own family. 
