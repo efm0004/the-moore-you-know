@@ -9,7 +9,7 @@ Technology used
 This game has been made using HTML, CSS, and Javascript. 
 
 Getting started
-http://anxious-spark.surge.sh/
+http://nonchalant-shame.surge.sh/
 
 Wireframe
 https://wireframe.cc/2IcMyo
@@ -20,6 +20,8 @@ As a user, I want to be able to see both images of my guess so that I can make a
 As a user, I want to be able to see my current score. 
 As a user, I want to be able to see how long it takes me to complete the game. 
 As a user, I want to be able to see my highest score. 
+As a user, I want to be able to play multiple levels. 
+As a user, I want to be able to restart the game whenever I want, while holding onto my highest score. 
 
 User Personas
 Name: Daniel
@@ -41,7 +43,7 @@ Timer - will time your attempts and add to score based on how quickly you comple
 High score - will add high score for the instance that has the highest amount of points
 
 Next steps/Stretch goals
-Reset button - try again, while holding onto your high score
+x Reset button - try again, while holding onto your high score
 Levels - this will allow the player to move into more difficult areas of the family - neices and nephews, identifying the couples/families, answering questions. 
 Hint button - this button will help you find a match if you're stuck
-Make your own - this button will allow you to upload your own pictures/names to create this game for your own family. 
+Make your own - this button will allow you to upload your own pictures and name cards to create this game for your own family. 

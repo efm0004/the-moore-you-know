@@ -197,7 +197,6 @@ let deckTwo = [
 
 var cardBack = "TMYK-Photos/TMYK-back.png";
 
-
 var matches = [
     [0, 1],
     [2, 3],
@@ -212,23 +211,21 @@ var matches = [
     [20, 21],
     [22, 23],
 ]
-//timer constants
-var minutes = 0;
-var seconds = 0;
-
-//score constants
-var x = 0;
 
 /*----- app's state (variables) -----*/ 
 let cardsInPlay = [];
 let random = [];
 let playerArr = [];
-let win;
+let win, level, elTime;
 let mFound = false;
-let level;
-let highest = [0];
-let cancel;
 
+//timer
+var minutes = 0;
+var seconds = 0;
+
+//score 
+var x = 0;
+let highest = [0];
 
 /*----- cached element references -----*/ 
 let image = document.querySelectorAll('img');
@@ -239,7 +236,6 @@ let elX = document.getElementById('current');
 let elHighest = document.getElementById('highscore');
 let reset = document.getElementById('reset');
 
-
 /*----- event listeners -----*/ 
 board.addEventListener('click', handleClick);
 reset.addEventListener('click', init);
@@ -247,10 +243,9 @@ reset.addEventListener('click', init);
 /*----- functions -----*/
 init();
 
-
 function init() {
-    clearInterval(cancel);
-    cancel = setInterval(incrementSeconds, 1000);
+    clearInterval(elTime);
+    elTime = setInterval(incrementSeconds, 1000);
     cardsInPlay = [];
     playerArr = [];
     random = [];
@@ -268,7 +263,6 @@ function init() {
 
 function initLevelTwo() {  
     random = [];
-    mFound = false;
     shuffle ();
     render ();
     msgEl.innerText = "Level Two";  
@@ -278,7 +272,7 @@ function render() {
     board.innerHTML = "";
     random.forEach(function(el, idx) {
     let img = document.createElement('img');
-    img.setAttribute('class', `back card face`);
+    img.setAttribute('class', `card`);
     img.setAttribute('src', 'TMYK-Photos/TMYK-back.png');
     img.setAttribute('id', `${el}`);
     board.appendChild(img);
@@ -294,15 +288,15 @@ function shuffle () {
         } else (i--);
     } 
     if (level === 1) {
-    let images = document.querySelectorAll('img.back')
+    let images = document.querySelectorAll('img.card')
     images.forEach((imageEl, index) => {
-        imageEl.setAttribute('class', `back ${deck[random[index]].name}`)
-    })
-} else if (level === 2) {
-    let images = document.querySelectorAll('img.back')
-    images.forEach((imageEl, index) => {
-        imageEl.setAttribute('class', `back ${deckTwo[random[index]].name}`)
-    })
+        imageEl.setAttribute('class', `card ${deck[random[index]].name}`)
+        })
+    } else if (level === 2) {
+        let images = document.querySelectorAll('img.card')
+        images.forEach((imageEl, index) => {
+        imageEl.setAttribute('class', `card ${deckTwo[random[index]].name}`)
+        })
     }
 }
 
@@ -317,7 +311,6 @@ function handleClick(evt){
     cardsInPlay.push({id:evt.target.id, src: evt.target.src});
     playerArr.push(parseInt(evt.target.id));
     setTimeout(getMatch, 500);
-
 }
 
 function checkMatch(a, b) {
@@ -337,7 +330,7 @@ function getMatch() {
                 playerArr.length = 0;    
                 cardsInPlay.length = 0;
                 mFound = true;
-        } 
+            } 
         }
             if(!mFound) {
                 msgEl.textContent = "Things are getting Harry!";
@@ -375,7 +368,7 @@ function getWinnerLevelOne(){
 function getWinnerLevelTwo() {
     if (win === 24) {
         msgEl.textContent = "You know your Moore's!";
-        clearInterval(cancel);
+        clearInterval(elTime);
         endScore();
         highScore();
     }
