@@ -34,15 +34,21 @@ https://efm0004.github.io/the-moore-you-know/
 ## User Personas
 
 Name: Daniel
+
 Age: 28
+
 Reason for playing game: Newly introduced into the family. Confused by all family members looking similar. Needs to practice facial recognition to make sure that he doesn't accidently call the sister-in-law by the name of the sister she doesn't like. 
 
 Name: Leah Cate
+
 Age: 8
+
 Reason for playing game: Current member of Moore family. Often confused due to the number of aunts, uncles, and cousins on both sides of the family and wants to know more specifically how she is related to all these people. 
 
 Name: Elizabeth
+
 Age: 32
+
 Reason for playing game: Long-time family friend of the Moores. However, with all the grandchildren and marriages, she wants to make sure she can keep up with all the new faces. 
 
 ### Features list
@@ -58,8 +64,8 @@ Reason for playing game: Long-time family friend of the Moores. However, with al
 
 - [x] Levels - this will allow the player to move into more difficult areas of the family - neices and nephews, identifying the couples/families, answering questions. 
 
-- [] Make mobile friendly.
+- [ ] Make mobile friendly.
 
-- [] Hint button - this button will help you find a match if you're stuck
+- [ ] Hint button - this button will help you find a match if you're stuck
 
-- [] Make your own - this button will allow you to upload your own pictures and name cards to create this game for your own family. 
+- [ ] Make your own - this button will allow you to upload your own pictures and name cards to create this game for your own family. 
