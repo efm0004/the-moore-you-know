@@ -1,27 +1,27 @@
-##The Moore You Know 
+# The Moore You Know 
 is a game to assist in the recall of names and faces of the Moore family. Currently, there are 24 members of the immediate family and this number grows every year. Introducing a new member into the family is often a challenge. This game is a prerequisite for all family gatherings.
 
-###Wireframe
+## Wireframe
 
 https://wireframe.cc/2IcMyo
 
-###Screenshots
+## Screenshots
 ![Start](https://i.imgur.com/wTR4E1R.png)
 ![Match](https://i.imgur.com/DQPXpG6.png)
 ![Win](https://i.imgur.com/c0g5Gic.png)
 
-###Technology used
+## Technology used
 
 This game has been made using HTML, CSS, and Javascript. 
 
-###Getting started
+## Getting started
 
 http://nonchalant-shame.surge.sh/
 
 https://efm0004.github.io/the-moore-you-know/
 
 
-###User Stories
+## User Stories
 
 As a user, I want to be able to know when I have successfully made a match. 
 
@@ -57,7 +57,7 @@ Age: 32
 
 Reason for playing game: Long-time family friend of the Moores. However, with all the grandchildren and marriages, she wants to make sure she can keep up with all the new faces. 
 
-###Features list
+## Features list
 
 4x6 card deck - when clicked card will "turn over" to reveal a name or a face. You must try to find the name/face match.
 
@@ -67,7 +67,7 @@ Timer - will time your attempts and add to score based on how quickly you comple
 
 High score - will add high score for the instance that has the highest amount of points
 
-###Next steps/Stretch goals
+## Next steps/Stretch goals
 
 Reset button - try again, while holding onto your high score
 
